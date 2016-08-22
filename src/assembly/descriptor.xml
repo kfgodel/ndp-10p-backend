@@ -16,7 +16,7 @@
   <fileSets>
     <fileSet>
       <directory>target/unpacked</directory>
-      <outputDirectory></outputDirectory>1
+      <outputDirectory></outputDirectory>
       <includes>
         <include>**/*</include>
       </includes>
