@@ -15,7 +15,7 @@
   <version>0.1-SNAPSHOT</version>
 
   <name>NdP-10P</name>
-  <description>Aplicacion muy simple para definir nombres claves a propuestas y proyectos 10p</description>
+  <description>Aplicacion muy simple para definir nombres claves a propuestas y proyectos</description>
 
   <scm>
     <connection>scm:git:ssh://github.com/kfgodel/nombre-de-proyecto-10p.git</connection>
