@@ -3,11 +3,11 @@ package convention.rest.api;
 import ar.com.kfgodel.appbyconvention.operation.api.ApplicationOperation;
 import ar.com.kfgodel.dependencies.api.DependencyInjector;
 import ar.com.kfgodel.diamond.api.types.reference.ReferenceOf;
+import ar.com.kfgodel.ndp.filters.elementos.ElementosDisponibles;
+import ar.com.kfgodel.ndp.filters.proyectos.FindAllProyectosNewestFirst;
 import ar.com.kfgodel.orm.api.operations.basic.DeleteById;
-import ar.com.kfgodel.orm.api.operations.basic.FindAll;
 import ar.com.kfgodel.orm.api.operations.basic.FindById;
 import ar.com.kfgodel.orm.api.operations.basic.Save;
-import convention.persistent.Elemento;
 import convention.persistent.EstadoDeProyecto;
 import convention.persistent.Proyecto;
 import convention.rest.api.tos.ElementoEnComboTo;
@@ -41,7 +41,7 @@ public class ProyectoResource {
   public List<ProyectoTo> getAll() {
     return createOperation()
       .insideASession()
-      .applying(FindAll.of(Proyecto.class))
+      .applying(FindAllProyectosNewestFirst.create())
       .convertTo(LIST_OF_PROYECTOS_TOS);
   }
 
@@ -59,7 +59,7 @@ public class ProyectoResource {
   public List<ElementoEnComboTo> getAllElementos() {
     return createOperation()
       .insideASession()
-      .applying(FindAll.of(Elemento.class))
+      .applying(ElementosDisponibles.create())
       .convertTo(LIST_OF_ELEMENTOS_TOS);
   }
 
