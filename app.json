@@ -1,0 +1,8 @@
+{
+  "name": "Nombre de proyecto 10P",
+  "description": "Application to manage project names",
+  "image": "heroku/java",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
